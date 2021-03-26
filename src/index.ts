@@ -1,6 +1,12 @@
+import db from './firebase/config';
 
+const usuario = {
+    nombre: 'leidy',
+    activo: true,
+    fechaNaci: 0
+}
 
+// insert into usuarios ....
 
-const mensaje = 'Hola leidy!';
-
-console.log( mensaje );
+db.collection('usuarios')
+.add(usuario)  
