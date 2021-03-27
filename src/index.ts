@@ -44,3 +44,34 @@ usuariosRef
 .onSnapshot( retornaDocumentos )
 
 usuariosRef.get().then( retornaDocumentos );
+/*
+select * from usuarios 
+where activo = true 
+*/
+
+usuariosRef.where('activo','==',true).get().then( retornaDocumentos );
+
+/*
+select * from usuarios 
+ where salario > 1800
+ */
+ usuariosRef.where('salario','>','1800') 
+ .get().then( retornaDocumentos );
+
+ /*
+select * from usuarios 
+ --where salario > 1800 and salario < 2300
+ */
+ usuariosRef.where('salario','>','1800') 
+ .where('salario','<','2300')
+ .get().then( retornaDocumentos );
+
+  /*
+select * from usuarios 
+ --where salario > 1800 
+ and activo == true 
+ */
+ usuariosRef.where('salario','>=','1800') 
+ .where('activo','==','true')   
+ .get().then( retornaDocumentos );
+ 
