@@ -31,3 +31,9 @@ usuariosRef
     edad: 17,
 });
 
+// delete from usuarios where id ='xx'
+usuariosRef 
+.doc('hISANn4LaqJZoCfLdCYL')
+.delete()
+.then( () => console.log('Borrado'))
+.catch ( e => console.log('error', e))
