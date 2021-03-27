@@ -9,4 +9,8 @@ const usuario = {
 // insert into usuarios ....
 
 db.collection('usuarios')
-.add(usuario)  
+.add( usuario )  
+.then( docRef => {
+    console.log( docRef )
+})
+.catch( e => console.log('error', e))
