@@ -37,3 +37,22 @@ usuariosRef
 .delete()
 .then( () => console.log('Borrado'))
 .catch ( e => console.log('error', e))
+
+// select * from usuarios;
+usuariosRef
+.onSnapshot( snap => {
+
+    const usuarios:  any[] = [];
+   snap.forEach( snapHijo => { 
+       usuarios.push({
+           id: snapHijo.id
+            ,snapHijo,data()
+        })
+});
+
+console.log(usuarios)
+})
+
+
+
+})
